@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:background="@color/GhostWhite"
+        android:layout_height="match_parent"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        tools:context=".Fragment.FragmentCategory">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="100dp"
+                android:id="@+id/sidemenu"
+                android:layout_height="match_parent"
+                android:background="@color/white"
+                android:orientation="vertical"
+                tools:ignore="MissingConstraints">
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintTop_toTopOf="@id/sidemenu"
+                    android:layout_marginTop="25dp"
+                    android:id="@+id/vegetableimg"
+                    android:src="@drawable/vegetable"
+                    android:padding="0dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Vegetables"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/vegetableimg"/>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintTop_toBottomOf="@id/vegetableimg"
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/Softdrink"
+                    android:src="@drawable/softdrink"
+                    android:padding="0dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Softdrink"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/Softdrink"/>
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintTop_toBottomOf="@id/Softdrink"
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/Seasonalfruit"
+                    android:src="@drawable/seasonal"
+                    android:padding="0dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Seasonal fruit"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/Seasonalfruit"/>
+
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintTop_toBottomOf="@id/Seasonalfruit"
+                    android:layout_marginTop="60dp"
+                    android:id="@+id/Bodycare"
+                    android:src="@drawable/soap"
+                    android:padding="0dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Body Care"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/Bodycare"/>
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintTop_toBottomOf="@id/Bodycare"
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/KitchenAppliances"
+                    android:src="@drawable/kitchen"
+                    android:padding="0dp"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Kitchen Appliances"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/KitchenAppliances"/>
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintTop_toBottomOf="@id/KitchenAppliances"
+                    android:layout_marginTop="60dp"
+                    android:id="@+id/Stationary"
+                    android:src="@drawable/stationary"
+                    android:padding="0dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Stationary"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/Stationary"/>
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintTop_toBottomOf="@id/Stationary"
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/Milkprotien"
+                    android:src="@drawable/milk"
+                    android:padding="0dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Milk / Protien"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/Milkprotien"/>
+
+
+
+
+                <ImageView
+                    android:layout_width="match_parent"
+                    android:layout_height="60dp"
+                    app:layout_constraintTop_toBottomOf="@id/Milkprotien"
+                    android:layout_marginTop="50dp"
+                    android:id="@+id/all"
+                    android:src="@drawable/basket"
+                    android:padding="0dp"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Mix"
+                    android:textStyle="bold"
+                    android:textColor="@color/black"
+                    android:layout_marginStart="15dp"
+                    app:layout_constraintTop_toBottomOf="@id/all"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </ScrollView>
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_marginStart="104dp"
+            android:background="@color/white"
+            app:layout_constraintRight_toLeftOf="@id/sidemenu"
+            android:layout_height="match_parent"
+            tools:ignore="NotSibling" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        tools:context=".Accounts.AccountSetting">
+
+
+        <ImageView
+            android:id="@+id/imageView15"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_marginTop="100dp"
+            android:src="@drawable/p"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutfulname"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="Full Name"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="35dp"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:startIconDrawable="@drawable/baseline_person_24"
+            app:layout_constraintTop_toBottomOf="@id/imageView15"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutemail"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:hint="E-mail id"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="0dp"
+            app:endIconMode="clear_text"
+            app:errorEnabled="true"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:startIconDrawable="@drawable/baseline_email_24"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutfulname"
+            app:layout_constraintStart_toStartOf="parent">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextemail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                tools:ignore="DuplicateIds" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutmobileno"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="Mobile No"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutemail"
+            app:errorEnabled="true"
+            app:counterMaxLength="10"
+            app:layout_constraintStart_toStartOf="parent"
+            app:startIconDrawable="@drawable/baseline_call_24"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextmobilenumber"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/textInputLayoutmobilenoalt"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="180dp"
+            android:layout_height="wrap_content"
+            android:hint="Alt Mobile No"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginTop="5dp"
+            app:endIconMode="clear_text"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutemail"
+            app:errorEnabled="true"
+            app:counterMaxLength="10"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:startIconDrawable="@drawable/baseline_call_24"
+            >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/textInputEditTextmobilenumberalt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:inputType="number" />
+        </com.google.android.material.textfield.TextInputLayout>
+
+        <Button
+            android:id="@+id/btnSaveProfileInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:layout_marginTop="25dp"
+            android:textStyle="bold"
+            android:textColor="@color/DarkOrange"
+            style="?attr/materialButtonOutlinedStyle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/textInputLayoutmobilenoalt" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/btnDeleteAccount"
+            android:layout_width="match_parent"
+            android:layout_height="80dp"
+            android:layout_weight="1"
+            android:textSize="16dp"
+            android:textStyle="bold"
+            android:textColor="@color/black"
+            android:layout_marginStart="32dp"
+            android:drawablePadding="20dp"
+            android:textAlignment="viewStart"
+            android:paddingStart="20dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/btn_background"
+            android:drawableStart="@drawable/delete_profile"
+            android:layout_marginTop="70dp"
+            android:layout_marginBottom="10dp"
+            app:layout_constraintTop_toBottomOf="@+id/btnSaveProfileInfo"
+            android:text="Request to delete account !"
+            tools:ignore="MissingConstraints" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
