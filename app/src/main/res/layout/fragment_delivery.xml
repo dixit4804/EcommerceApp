@@ -60,7 +60,6 @@
                 android:textAlignment="viewStart"
                 android:paddingStart="20dp"
                 android:layout_marginEnd="22dp"
-                android:background="@color/ic_launcher_background"
                 android:drawableStart="@drawable/add_new_adress"
                 android:layout_marginTop="20dp"
                 android:drawableEnd="@drawable/arow"
@@ -152,7 +151,7 @@
                         android:layout_height="wrap_content"
                         android:layout_gravity="center_vertical"
                         android:paddingStart="10dp"
-                        android:text="IndiCorp It Solutons Pvt Ltd G-5 Noida"
+                        android:text="Noida sector 63"
                         android:textSize="16sp" />
                 </LinearLayout>
 

@@ -16,10 +16,11 @@ import com.dixit.ecommerceapp.Accounts.AccountSetting
 import com.dixit.ecommerceapp.Activity.LoginActivity
 import com.dixit.ecommerceapp.R
 import com.dixit.ecommerceapp.databinding.FragmentAccountBinding
-
+import com.google.firebase.auth.FirebaseAuth
 
 class FragmentAccount : Fragment() {
     private lateinit var binding: FragmentAccountBinding
+    private lateinit var firebaseAuth: FirebaseAuth
 
     @SuppressLint("ResourceType")
     override fun onCreateView(
@@ -28,6 +29,8 @@ class FragmentAccount : Fragment() {
     ): View {
         // Inflate the layout for this fragment using data binding
         binding = DataBindingUtil.inflate(inflater, R.layout.fragment_account, container, false)
+
+        firebaseAuth = FirebaseAuth.getInstance()
 
         // Set click listeners for all buttons
         binding.acountbtn.setOnClickListener {
@@ -62,7 +65,6 @@ class FragmentAccount : Fragment() {
             transaction.replace(R.id.fragmentContainer, Support())
             transaction.addToBackStack(null)
             transaction.commit()
-
         }
 
         // Set click listener for the log-out button
@@ -91,6 +93,7 @@ class FragmentAccount : Fragment() {
 
     private fun performLogout() {
         Log.d("FragmentAccount", "Performing logout")
+        firebaseAuth.signOut()  // Sign out from Firebase Authentication
         val intent = Intent(activity, LoginActivity::class.java)
         intent.flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
         ContextCompat.startActivity(requireContext(), intent, null)

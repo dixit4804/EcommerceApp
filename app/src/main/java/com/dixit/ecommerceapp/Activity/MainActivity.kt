@@ -1,6 +1,6 @@
 package com.dixit.ecommerceapp.Activity
 
-import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -11,6 +11,7 @@ import com.dixit.ecommerceapp.Fragment.FragmentDelivery
 import com.dixit.ecommerceapp.Fragment.FragmentHome
 import com.dixit.ecommerceapp.R
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import com.google.firebase.auth.FirebaseAuth
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,6 +20,7 @@ class MainActivity : AppCompatActivity() {
     private val accountFragment = FragmentAccount()
     private val categoryFragment = FragmentCategory()
     private val deliveryFragment = FragmentDelivery()
+    private lateinit var firebaseAuth: FirebaseAuth
 
     private val onNavigationItemSelectedListener =
         BottomNavigationView.OnNavigationItemSelectedListener { item ->
@@ -43,7 +45,6 @@ class MainActivity : AppCompatActivity() {
                     switchFragment(accountFragment)
                     return@OnNavigationItemSelectedListener true
                 }
-                // Add cases for additional menu items if needed
                 else -> false
             }
         }
@@ -54,10 +55,19 @@ class MainActivity : AppCompatActivity() {
             .commit()
     }
 
-    @SuppressLint("MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+
+        firebaseAuth = FirebaseAuth.getInstance()
+        val currentUser = firebaseAuth.currentUser
+
+        if (currentUser == null || !currentUser.isEmailVerified) {
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+            finish()
+            return
+        }
 
         val navView: BottomNavigationView = findViewById(R.id.bottomNavigationView)
         navView.setOnNavigationItemSelectedListener(onNavigationItemSelectedListener)
@@ -66,4 +76,3 @@ class MainActivity : AppCompatActivity() {
         switchFragment(homeFragment)
     }
 }
-

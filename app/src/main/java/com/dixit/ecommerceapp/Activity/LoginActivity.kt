@@ -1,6 +1,5 @@
 package com.dixit.ecommerceapp.Activity
 
-
 import android.content.Intent
 import android.os.Bundle
 import android.widget.Toast
@@ -20,10 +19,8 @@ class LoginActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_login)
         firebaseAuth = FirebaseAuth.getInstance()
 
-//         Check if the user is already authenticated
         val currentUser = firebaseAuth.currentUser
-        if (currentUser != null) {
-            // User is already logged in, navigate to the MainActivity
+        if (currentUser != null && currentUser.isEmailVerified) {
             val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             finish()
@@ -34,7 +31,6 @@ class LoginActivity : AppCompatActivity() {
             val email = binding.textInputEditText.text.toString()
             val password = binding.textInputEditText2.text.toString()
 
-            // You can add your login logic here, for example:
             if (email.isBlank() || password.isBlank()) {
                 Toast.makeText(this, "Email/Password Can't Be Empty", Toast.LENGTH_SHORT).show()
                 return@setOnClickListener
